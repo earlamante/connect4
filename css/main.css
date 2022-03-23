@@ -1,0 +1,161 @@
+@font-face {
+    font-family: 'Digital Numbers Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Digital Numbers Regular'), url('../fonts/DigitalNumbers-Regular.woff') format('woff');
+}
+
+body {
+
+}
+
+#overlay {
+    background: rgba(0,0,0,0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    z-index: -99;
+}
+
+#overlay.show {
+    opacity: 1;
+    z-index: 99;
+}
+
+#settings button {
+    background: #f4f4f4;
+    border: 2px solid #3d3d3d;
+}
+
+#settings button.active {
+    background: #5a5a5a;
+    border: 2px solid #3d3d3d;
+    color: #fff;
+}
+
+#settings .top-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#settings .top-menu a {
+    height: 25px;
+    vertical-align: bottom;
+}
+
+a.close {
+    width: 25px;
+    line-height: 20px;
+    border: 2px solid #000;
+    border-radius: 100%;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+}
+
+#menu a {
+    background: #f4f4f4;
+    border: 2px solid #3d3d3d;
+    display: inline-block;
+    max-width: 300px;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 21px;
+    color: #000;
+    width: 100%;
+}
+
+
+#game {
+    border: 5px solid #89CFF0;
+    position: relative;
+    margin: 0 auto;
+}
+#game:after {
+    content: '';
+    border: 5px solid #ADD8E6;
+    background: #ADD8E6;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    bottom: -55px;
+    left: -5px;
+    box-sizing: content-box;
+}
+#game.ready {
+    margin-top: 150px;
+}
+#game .cell {
+    position: absolute;
+}
+.dz {
+    transition: top 200ms ease-in-out;
+}
+.dz,
+.arrow {
+    position: absolute;
+}
+.dz-wrapper {
+    cursor: pointer;
+    height: 100%;
+}
+.dz-wrapper .piece {
+    opacity: 0;
+}
+.dz-wrapper:hover .piece {
+    opacity: 1;
+}
+.dz-wrapper,
+.arrow-wrapper {
+    position: relative;
+    width: 100%;
+}
+.arrow-wrapper:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #000;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+.piece-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.piece-wrapper:after {
+    content: '';
+    background-image: url('../img/tile.png');
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+.piece {
+    position: absolute;
+    width: 96%;
+    height: 96%;
+    top: 2%;
+    left: 2%;
+    border: 1px solid #000;
+    border-radius: 100%;
+    z-index: 5;
+}
+.piece--red {
+    background: #C41E3A;
+}
+.piece--blue {
+    background: #0047AB;
+}
