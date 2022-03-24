@@ -151,7 +151,7 @@ let game = {
 
     function change_player() {
         let cn = cp.hasClass('piece--red') ? 'piece--blue' : 'piece--red';
-        cp.removeClass('piece--red').removeClass('piece--blue').addClass(cn);
+        cp.removeClass('piece--red piece--blue').addClass(cn);
     }
 
     function draw_dropzone() {
