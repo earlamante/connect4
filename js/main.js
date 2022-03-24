@@ -91,7 +91,6 @@ let game = {
     function init() {
         prepare();
         start();
-        console.log(game);
     }
 
     function prepare() {
